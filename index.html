@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple student record management system.">
+  <title>Student Record Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">SR</div>
+      <div>
+        <h1>Student Record Manager</h1>
+        <p>Manage student information easily</p>
+      </div>
+    </div>
+    <span class="status"><span class="status-dot"></span> Local system</span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">STUDENT MANAGEMENT</p>
+        <h2>Dashboard</h2>
+        <p class="welcome-text">Add, view, search and manage student records in one place.</p>
+      </div>
+      <div class="welcome-mark" aria-hidden="true">SRM</div>
+    </section>
+
+    <section class="stats" aria-label="Student statistics">
+      <article class="stat-card">
+        <span class="stat-label">Total Students</span>
+        <strong id="totalStudents">0</strong>
+        <span class="stat-note">Saved records</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Storage</span>
+        <strong class="storage-value">Browser</strong>
+        <span class="stat-note">LocalStorage</span>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">NEW ENTRY</p>
+          <h2>Add Student</h2>
+        </div>
+        <span class="section-number">01</span>
+      </div>
+
+      <form id="studentForm">
+        <div class="form-grid">
+          <label>
+            Student Name
+            <input type="text" id="studentName" placeholder="Enter student name" maxlength="60" required>
+          </label>
+          <label>
+            Roll Number
+            <input type="text" id="rollNumber" placeholder="e.g. BSCS-001" maxlength="25" required>
+          </label>
+          <label>
+            Program
+            <select id="program" required>
+              <option value="">Select program</option>
+              <option>BS Computer Science</option>
+              <option>BS Information Technology</option>
+              <option>BS Software Engineering</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>
+            Semester
+            <select id="semester" required>
+              <option value="">Select semester</option>
+              <option>1st Semester</option>
+              <option>2nd Semester</option>
+              <option>3rd Semester</option>
+              <option>4th Semester</option>
+              <option>5th Semester</option>
+              <option>6th Semester</option>
+              <option>7th Semester</option>
+              <option>8th Semester</option>
+            </select>
+          </label>
+        </div>
+        <p id="formMessage" class="form-message" role="status"></p>
+        <button class="primary-button" type="submit">+ Add Student Record</button>
+      </form>
+    </section>
+
+    <section class="panel records-panel">
+      <div class="section-heading records-heading">
+        <div>
+          <p class="eyebrow">STUDENT DATABASE</p>
+          <h2>Student Records</h2>
+        </div>
+        <span class="section-number">02</span>
+      </div>
+
+      <label class="search-label" for="searchInput">Search records</label>
+      <input type="search" id="searchInput" class="search-input" placeholder="Search by name or roll number...">
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Roll Number</th>
+              <th>Program</th>
+              <th>Semester</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="recordsBody">
+            <tr class="empty-row"><td colspan="5">No student records yet. Add your first student above.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="footnote">Records are saved in this browser on this device using LocalStorage.</p>
+    </section>
+
+    <footer>
+      <p>Student Record Manager <span>•</span> Application of ICT Project</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
